@@ -1,0 +1,20 @@
+<div class="d-flex my-1 rp-playlist">
+    <div class="w-100 rp-playlist-header">
+        <ng-content select="[header]"></ng-content>
+    </div>
+    
+    <div class="w-100 overflow-y-auto rp-tracks-list">
+        <a class="list-group-item list-group-item-action text-truncate rp-tracks-list-item" [class.active]="this.currentIndex == trackIndex" *ngFor="let track of this.tracks; index as trackIndex" (click)="onTrackClick(track)">
+            <div class="d-flex w-100 justify-content-between">
+                <h5>{{ track.title }}</h5>
+                <small>0:00:00</small>    
+            </div>
+            <p class="mb-1 text-body-secondary">Lorem ipsum dolor sit amet</p>
+            <small class="text-body-tertiary">Lorem ipsum dolor sit amet</small>
+        </a>
+    </div>
+    
+    <div class="w-100 rp-playlist-footer">
+        <ng-content select="[footer]"></ng-content>
+    </div>
+</div>

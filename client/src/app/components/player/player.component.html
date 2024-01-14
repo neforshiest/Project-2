@@ -1,0 +1,24 @@
+<div class="position-absolute top-50 start-50 translate-middle col-6 border rounded shadow-lg rp-player-container">
+    <div class="d-flex container-fluid align-items-stretch rp-player">
+        <div class="d-flex flex-fill">
+            <div class="w-100 m-1">
+                <mediaplayer (trackTimeChanged)="onTrackTimeChanged()"></mediaplayer>
+                <div class="d-flex justify-content-center my-2 w-100">
+                    <span class="d-flex align-self-center text-secondary">{{ this.currentTrackTime | duration }}</span>
+                    <button type="button" class="btn btn-secondary" (click)="onPreviousTrackClick($event)">previous</button>
+                    <button type="button" class="btn btn-primary mx-1" (click)="onPlayClick($event)">
+                        play / stop
+                    </button>
+                    <button type="button" class="btn btn-secondary" (click)="onNextTrackClick($event)">next</button>
+                    <span class="d-flex align-self-center text-secondary ml-2">{{ this.leastTrackTime | duration }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex col-6">
+            <playlist class="w-100" [tracks]="this.tracks" (currentIndexChanged)="onCurrentTrackIndexChanged()">
+                <p header>Tracks list</p>
+                <p footer>end</p>
+            </playlist>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,41 @@
+.rp-playlist {
+    flex-direction: column;
+    height: 100%;
+
+    .rp-playlist-header {
+
+    }
+
+    .rp-tracks-list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .rp-tracks-list-item {
+            display: block;
+            color: var(--bs-list-group-color);
+            background-color: var(--bs-list-group-bg);
+            position: relative;
+            padding: 8px;
+            width: 100%;
+            text-decoration: none;
+
+
+            &:hover {
+                background-color: var(--color3);
+            }
+
+            .title {
+
+            }
+        }
+
+        .rp-tracks-list-item.active {
+            background-color: var(--color2);
+        }
+    }
+
+    .rp-playlist-footer {
+
+    }
+}
